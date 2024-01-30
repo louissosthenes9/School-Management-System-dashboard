@@ -1,11 +1,18 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Teacher extends Model
+class Teacher extends authenticatable
 {
-    use HasFactory;
+    use HasFactory,Notifiable,HasApiTokens;
+
+    protected $fillable = [
+        "first_name", "last_name",
+        "email",
+        "Mobile-no", "password"
+    ];
 }
