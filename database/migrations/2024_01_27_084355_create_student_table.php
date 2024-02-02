@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+    /**]
      * Run the migrations.
      */
     public function up(): void
@@ -22,8 +22,6 @@ return new class extends Migration
             $table->bigInteger("Mobile-no");
             $table->string("password");
             $table->string("passportUrl");
-            $table->unsignedBigInteger("guardian_id");
-            $table->foreign("guardian_id")->references("guardian.id")->on("guardian")->onDelete("cascade");
             $table->timestamps();
         });
     }

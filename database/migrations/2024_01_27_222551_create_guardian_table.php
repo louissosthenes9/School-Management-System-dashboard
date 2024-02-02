@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string("email");
             $table->bigInteger("Mobile_number");
             $table->unsignedBigInteger("student_id");
-            $table->foreign("student_id")->references("students.id")->on("students")->onDelete("cascade");
+            $table->foreign('student_id')
+                ->references('id')
+                ->on('student')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
