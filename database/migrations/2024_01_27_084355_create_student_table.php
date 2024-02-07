@@ -19,9 +19,10 @@ return new class extends Migration
             $table->char("sex");
             $table->date("birth_day");
             $table->string("email");
-            $table->bigInteger("Mobile-no");
+            $table->unsignedBigInteger("Mobile-no");
+            $table->integer("Academic_year");
             $table->string("password");
-            $table->string("passportUrl");
+            $table->string("passportUrl")->nullable();
             $table->timestamps();
         });
     }
