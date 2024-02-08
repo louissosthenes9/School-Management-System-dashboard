@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('test_score')->nullable(); // Nullable to allow for missing test scores
             $table->timestamps();
 
-            $table->foreign('student_id')->references('id')->on('student')->onDelete('cascade');
-            $table->foreign('subject_id')->references('id')->on('subject')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
 
             $table->primary(['student_id', 'subject_id']);
         });

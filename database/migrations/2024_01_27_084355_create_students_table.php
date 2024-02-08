@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('student', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string("first_name");
             $table->string("middle_name");
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->char("sex");
             $table->date("birth_day");
             $table->string("email");
-            $table->unsignedBigInteger("Mobile-no");
+            $table->string("Mobile-no");
             $table->integer("Academic_year");
             $table->string("password");
             $table->string("passportUrl")->nullable();

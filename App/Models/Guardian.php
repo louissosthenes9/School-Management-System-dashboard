@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -15,13 +17,13 @@ class Guardian extends Model
 
     protected $fillable = [
         "first_name", "last_name",
-         "relation","email",
-        "Mobile-no", "password"
+         "email",
+        "Mobile_number", "password"
     ];
 
-    public function students() :HasMany
+    public function students() :BelongsTo
     {
-        return $this->hasMany("students","student_id");
+        return $this->belongsTo(Student::class);
     }
 
 

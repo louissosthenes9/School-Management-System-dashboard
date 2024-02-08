@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('guardian', function (Blueprint $table) {
+        Schema::create('guardians', function (Blueprint $table) {
             $table->id();
             $table->string("first_name");
             $table->string("last_name");
             $table->string("email");
             $table->string("password");
-            $table->bigInteger("Mobile_number");
+            $table->string("Mobile_number");
             $table->unsignedBigInteger("student_id");
             $table->foreign('student_id')
                 ->references('id')
-                ->on('student')
+                ->on('students')
                 ->onDelete('cascade');
             $table->timestamps();
         });

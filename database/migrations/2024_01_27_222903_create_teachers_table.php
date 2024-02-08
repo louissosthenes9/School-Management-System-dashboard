@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("last_name");
             $table->string("email");
             $table->string("password");
-            $table->bigInteger("Mobile_number");
+            $table->string("Mobile_number");
             $table->unsignedBigInteger("subject_id")
                    ->constrained("subject")
                     ->onCascadeDelete();
