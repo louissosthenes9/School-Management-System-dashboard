@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string("password");
             $table->string("Mobile_number");
             $table->unsignedBigInteger("subject_id")
-                   ->constrained("subject")
-                    ->onCascadeDelete();
+                ->nullable()
+                ->constrained("subject")
+                ->onCascadeDelete();
             $table->timestamps();
         });
     }

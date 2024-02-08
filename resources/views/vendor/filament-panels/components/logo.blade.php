@@ -1,5 +1,6 @@
 <img
-    src="logo.blade.php"
-    alt = ""
+    src="{{asset('images/logo.jpeg')}}"
+    alt = "iLearn"
+    class = "h-10 w-12 rounded-lg"
 
 >
