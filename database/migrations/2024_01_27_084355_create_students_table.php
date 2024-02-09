@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("email");
             $table->string("Mobile-no");
             $table->integer("Academic_year");
-            $table->string("password");
+            $table->string("password")->default("Learn123");
             $table->string("passportUrl")->nullable();
             $table->timestamps();
         });

@@ -10,7 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Select;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class StudentResource extends Resource
@@ -38,8 +38,10 @@ class StudentResource extends Resource
                                      'Female'=>'F'
                                      ]),
                                  Forms\Components\DatePicker::make("birth_day"),
-                                 Forms\Components\Select::make("Academic_year")->options(['1','2','3','4'])
-                             ])->columns(2)
+                                 Select::make("Academic_year")
+                                     ->options([1,2,3,4])
+
+                             ])
                     ]),
                  Forms\Components\Group::make()->schema([
                      Forms\Components\Section::make()->schema([
