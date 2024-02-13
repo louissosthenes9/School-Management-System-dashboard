@@ -27,9 +27,9 @@ class StudentResource extends Resource
                     ->schema([
                         Forms\Components\Section::make()
                             ->schema([
-                                Forms\Components\TextInput::make("first_name"),
-                                Forms\Components\TextInput::make("middle_name"),
-                                Forms\Components\TextInput::make("last_name")
+                                Forms\Components\TextInput::make("first_name")->required(),
+                                Forms\Components\TextInput::make("middle_name")->required(),
+                                Forms\Components\TextInput::make("last_name")->required()
                             ])->columns(3),
                          Forms\Components\Section::make()
                              ->schema([
@@ -45,8 +45,11 @@ class StudentResource extends Resource
                     ]),
                  Forms\Components\Group::make()->schema([
                      Forms\Components\Section::make()->schema([
-                     Forms\Components\TextInput::make("Mobile-no"),
-                     Forms\Components\TextInput::make("email"),
+                     Forms\Components\TextInput::make("Mobile-no")
+                         ->required(),
+                     Forms\Components\TextInput::make("email")
+                         ->unique()
+                         ->required(),
                    ])
                  ])
             ]);
@@ -56,14 +59,25 @@ class StudentResource extends Resource
     {
         return $table
             ->columns([
-               Tables\Columns\TextColumn::make("first_name"),
-               Tables\Columns\TextColumn::make("last_name"),
-               Tables\Columns\TextColumn::make("sex"),
+               Tables\Columns\TextColumn::make("first_name")
+                   ->searchable()
+                   ->sortable(),
+               Tables\Columns\TextColumn::make("last_name")
+                   ->searchable()
+                   ->sortable(),
+               Tables\Columns\TextColumn::make("sex")->sortable(),
                Tables\columns\TextColumn::make("Mobile-no"),
                Tables\Columns\TextColumn::make("email"),
                Tables\Columns\TextColumn::make("Academic_year"),
-            ])
+             ])
             ->filters([
+                Tables\Filters\SelectFilter::make("Academic_year") ->label('Academic Year')
+                    ->options([
+                        1 => '1',
+                        2 => '2',
+                        3 => '3',
+                        4 => '4',
+                    ])
 
             ])
             ->actions([
