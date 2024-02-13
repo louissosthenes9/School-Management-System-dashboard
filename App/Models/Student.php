@@ -25,7 +25,7 @@ class Student extends Authenticatable{
         "last_name", "sex",
         "birth_day", "email",
         "Mobile-no", "password",
-        "passportUrl", "class"
+        "passportUrl", "Academic_year"
     ];
 
 

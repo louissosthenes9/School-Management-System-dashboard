@@ -23,7 +23,18 @@ class TeacherResource extends Resource
     {
         return $form
             ->schema([
-                //
+          Forms\Components\Group::make()
+              ->schema([
+                  Forms\Components\Section::make()
+                   ->schema([
+                       Forms\Components\TextInput::make("first_name"),
+                       Forms\Components\TextInput::make("last_name"),
+                       Forms\Components\TextInput::make("email"),
+                       Forms\Components\TextInput::make("Mobile_number"),
+                       Forms\Components\TextInput::make("password"),
+                   ])
+
+                ])
             ]);
     }
 
@@ -32,9 +43,9 @@ class TeacherResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make("first_name"),
-                Tables\Columns\TextColumn::make("last_name"), 
+                Tables\Columns\TextColumn::make("last_name"),
                 Tables\columns\TextColumn::make("Mobile_number"),
-                Tables\Columns\TextColumn::make("email"),          
+                Tables\Columns\TextColumn::make("email"),
                  ])
             ->filters([
                 //
