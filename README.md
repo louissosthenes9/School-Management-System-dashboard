@@ -1,12 +1,8 @@
-`public/images/banner.jpg`.
-
----
 
 # School Management Dashboard
 
 Welcome to the School Management Dashboard! This project is built using Laravel and Filament PHP to provide an easy-to-use interface for managing students, teachers, and subjects.
-
-![Dashboard Banner](public/images/banner.jpg)
+![Dashboard Banner](https://github.com/louissosthenes9/School-Management-System-dashboard/blob/master/public/images/banner.png)
 
 ## Features
 
